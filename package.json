@@ -1,6 +1,6 @@
 {
   "name": "reactwidgetdemo",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": false,
   "author": "Fidel Guajardo",
   "description": "A POC stock info widget to be consumed by another react app",
