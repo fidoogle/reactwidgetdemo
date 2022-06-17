@@ -1,36 +1,31 @@
 import React from 'react';
 import useCryptoData from "../hooks/useCryptoData";
+import CryptoItem from "./CryptoItem";
 
-const CryptoItem = (props) => (
-  <div className="item">
-    <img src={props.ImageUrl} className="icon" alt={props.Name} />
-    <div className="display-container">
-      <div className="name">{props.Name}</div>
-      <div className="fullname">{props.FullName}</div>
-    </div>
-    <div className="price-container">
-      <div className="price">{props.Price}</div>
-      <div
-        className={`price-change ${parseInt(props.Change24hr) < 0 ? "danger" : "success"
-          }`}
-      >
-        {props.Change24hr}
-      </div>
-    </div>
-  </div>
-);
-
-const CryptoList = () => {
+const CryptoList = ({ backgroundColor = '#1e2329' }) => {
   const { cryptoData, isLoading } = useCryptoData();
+  const styles = {
+    container: {
+      backgroundColor,
+      padding: "20px",
+      borderRadius: "12px",
+      boxShadow: "rgba(0, 0, 0, 0.1) 0px 10px 30px"
+    },
+    loadingText: {
+      color: "#fafafa",
+      fontSize: "16px",
+      fontWeight: 600,
+    }
+  }
   return (
     <div>
-      <div className="container">
+      <div style={styles.container}>
         {!isLoading ? (
           cryptoData.map((itemData) => (
             <CryptoItem key={itemData.Id} {...itemData} />
           ))
         ) : (
-          <p className="loading-text">Loading Data...</p>
+          <p style={styles.loadingText}>Loading Data...</p>
         )}
       </div>
     </div>
