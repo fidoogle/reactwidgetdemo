@@ -1,4 +1,4 @@
-import CryptoList from "./components/CryptoList";
+import CryptoList from "./lib/components/CryptoList";
 import './App.css';
 
 function App() {
