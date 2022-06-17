@@ -31,4 +31,4 @@ export default Demo;
 
 ## Props
 
-    none yet
+    backgroundColor string (for example "red", or "#ff0000") defaults to "#1e2329"
