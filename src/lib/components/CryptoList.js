@@ -1,3 +1,4 @@
+import React from 'react';
 import useCryptoData from "../hooks/useCryptoData";
 
 const CryptoItem = (props) => (
